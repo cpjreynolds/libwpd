@@ -421,6 +421,9 @@ WPDAPI WPDResult WPDocument::parse(librevenge::RVNGInputStream *input, libreveng
 
 WPDAPI WPDResult WPDocument::parseSubDocument(librevenge::RVNGInputStream *input, librevenge::RVNGTextInterface *textInterface, WPDFileFormat fileFormat)
 {
+	if (!input)
+		return WPD_FILE_ACCESS_ERROR;
+
 	WPXParser *parser = 0;
 
 	WPDResult error = WPD_OK;
