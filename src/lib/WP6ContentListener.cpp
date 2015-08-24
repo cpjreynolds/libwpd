@@ -549,7 +549,7 @@ void WP6ContentListener::insertTab(const unsigned char tabType, double tabPositi
 				else
 					m_ps->m_textIndentByTabs = tabPosition - m_ps->m_paragraphMarginLeft - m_ps->m_pageMarginLeft
 					                           - m_ps->m_sectionMarginLeft - m_ps->m_textIndentByParagraphIndentChange;
-				if (m_parseState->m_isListReference)
+				if (m_parseState->m_isListReference && m_parseState->m_numListExtraTabs > 0)
 					m_parseState->m_numListExtraTabs--;
 				break;
 
