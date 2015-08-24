@@ -178,6 +178,8 @@ WP6CharacterGroup_ParagraphNumberOnSubGroup::WP6CharacterGroup_ParagraphNumberOn
 {
 	m_outlineHash = readU16(input, encryption);
 	m_level = readU8(input, encryption);
+	if (m_level > WP6_NUM_LIST_LEVELS)
+		m_level = WP6_NUM_LIST_LEVELS - 1;
 	m_flag = readU8(input, encryption);
 }
 
