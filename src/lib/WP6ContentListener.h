@@ -144,7 +144,9 @@ public:
 
 	WPXNumberingType getListType(int level)
 	{
-		return m_listTypes[level];
+		if (level >= 0 && unsigned(level) < WPD_NUM_ELEMENTS(m_listTypes))
+			return m_listTypes[level];
+		return WPXNumberingType();
 	}
 
 protected:
